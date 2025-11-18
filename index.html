@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venkata Ramana Anjuri | Cyber Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: JetBrains Mono (Code font) & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#00f0ff',    /* Cyber Cyan */
+                        accent: '#0aff60',     /* Hacker Green */
+                        dark: '#0a0a0a',       /* Deep Black */
+                        surface: '#111111',    /* Slightly lighter black for cards */
+                        dim: '#888888'
+                    },
+                    boxShadow: {
+                        'neon': '0 0 10px rgba(0, 240, 255, 0.5), 0 0 20px rgba(0, 240, 255, 0.3)',
+                        'green-glow': '0 0 10px rgba(10, 255, 96, 0.5)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Terminal Cursor Animation */
+        .cursor-blink {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        /* Matrix-like background effect container */
+        .cyber-grid {
+            background-image: radial-gradient(#1f2937 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.1;
+        }
+        .glass-panel {
+            background: rgba(17, 17, 17, 0.7);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-300 bg-dark antialiased selection:bg-primary selection:text-black">
+
+    <!-- Background Grid -->
+    <div class="fixed inset-0 cyber-grid pointer-events-none z-0"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full bg-dark/90 backdrop-blur-md border-b border-white/10 z-50" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <span class="text-accent font-mono text-xl font-bold">&lt;usr/&gt;</span>
+                    <a href="#" class="text-xl font-bold text-white tracking-wider">VENKATA_R_ANJURI</a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6 font-mono text-sm">
+                    <a href="#about" class="text-slate-400 hover:text-primary transition hover:shadow-neon">01. About</a>
+                    <a href="#experience" class="text-slate-400 hover:text-primary transition hover:shadow-neon">02. Experience</a>
+                    <a href="#projects" class="text-slate-400 hover:text-primary transition hover:shadow-neon">03. Projects</a>
+                    <a href="#skills" class="text-slate-400 hover:text-primary transition hover:shadow-neon">04. Skills</a>
+                    <a href="#certifications" class="text-slate-400 hover:text-primary transition hover:shadow-neon">05. Certs</a>
+                    <a href="#contact" class="text-accent border border-accent px-4 py-1 rounded hover:bg-accent hover:text-black transition">Init_Contact()</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-primary focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                        <i class="fa-solid fa-terminal text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-white/10">
+            <div class="px-4 pt-4 pb-6 space-y-2 font-mono text-sm">
+                <a href="#about" class="block text-slate-300 hover:text-primary py-2">01. About</a>
+                <a href="#experience" class="block text-slate-300 hover:text-primary py-2">02. Experience</a>
+                <a href="#projects" class="block text-slate-300 hover:text-primary py-2">03. Projects</a>
+                <a href="#skills" class="block text-slate-300 hover:text-primary py-2">04. Skills</a>
+                <a href="#certifications" class="block text-slate-300 hover:text-primary py-2">05. Certs</a>
+                <a href="#contact" class="block text-accent py-2">Init_Contact()</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto z-10">
+        <div class="font-mono text-accent mb-4">
+            <span class="mr-2">$</span><span id="typewriter">echo "Hello World..."</span><span class="cursor-blink bg-accent w-2 h-5 inline-block align-middle ml-1"></span>
+        </div>
+        
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
+            Venkata Ramana Anjuri <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">Cybersecurity & Embedded Systems.</span>
+        </h1>
+        
+        <p class="mt-4 text-xl text-slate-400 max-w-3xl mb-10 leading-relaxed">
+            I design secure digital infrastructures. Specializing in <span class="text-primary">IoT Security</span>, <span class="text-primary">Post-Quantum Cryptography</span>, and <span class="text-primary">Secure Embedded Systems</span>. Currently pursuing B.Tech at Vel Tech University.
+        </p>
+        
+        <div class="flex flex-wrap gap-4 font-mono text-sm">
+            <a href="#projects" class="px-8 py-3 rounded border border-primary text-primary hover:bg-primary/10 transition shadow-neon">
+                View_Operations
+            </a>
+            <a href="https://github.com/VenkataRamanaAnjuri" target="_blank" class="px-8 py-3 rounded border border-slate-700 text-slate-300 hover:border-white hover:text-white transition">
+                <i class="fa-brands fa-github mr-2"></i> GitHub_Repo
+            </a>
+            <a href="https://linkedin.com/in/venkataramanaanjuri" target="_blank" class="px-8 py-3 rounded border border-slate-700 text-slate-300 hover:border-white hover:text-white transition">
+                <i class="fa-brands fa-linkedin mr-2"></i> LinkedIn
+            </a>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 bg-surface border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-start gap-12">
+                <!-- Image/Avatar -->
+                <div class="w-full md:w-1/3">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded opacity-75 blur group-hover:opacity-100 transition duration-200"></div>
+                        <div class="relative bg-dark p-1 rounded">
+                            <img src="https://api.dicebear.com/9.x/avataaars/svg?seed=Venkata&eyebrows=default&clothing=hoodie&skinColor=light" 
+                                 alt="Avatar" 
+                                 class="w-full h-auto rounded bg-black/50 aspect-square object-cover grayscale hover:grayscale-0 transition duration-500">
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    <div class="mt-6 grid grid-cols-2 gap-4 font-mono text-xs text-center">
+                        <div class="bg-dark p-3 rounded border border-white/10">
+                            <div class="text-accent text-lg font-bold">7.3/10</div>
+                            <div class="text-slate-500">CGPA</div>
+                        </div>
+                        <div class="bg-dark p-3 rounded border border-white/10">
+                            <div class="text-primary text-lg font-bold">2026</div>
+                            <div class="text-slate-500">Grad Year</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bio Content -->
+                <div class="w-full md:w-2/3">
+                    <h2 class="flex items-center text-2xl font-bold text-white mb-6 font-mono">
+                        <span class="text-primary mr-2">01.</span> Profile Summary
+                        <span class="ml-4 h-px bg-white/20 flex-grow max-w-xs"></span>
+                    </h2>
+                    <p class="text-slate-400 mb-4 leading-relaxed">
+                        Proactive Cybersecurity and Embedded Systems Engineer seeking to leverage expertise in secure software design, IoT security, and post-quantum cryptography to secure digital infrastructure as a Cybersecurity Analyst or Security Engineer.
+                    </p>
+                    <p class="text-slate-400 mb-6 leading-relaxed">
+                        I have proven skills in vulnerability assessment, threat analysis, and hands-on experience with embedded systems and secure communication protocols.
+                    </p>
+                    
+                    <h3 class="text-lg font-bold text-white mt-8 mb-4">Education</h3>
+                    <div class="border-l-2 border-primary pl-4 mb-6">
+                        <h4 class="text-white font-semibold">B.Tech in Electronics & Communication Engineering</h4>
+                        <p class="text-primary text-sm">Specialization in Cybersecurity</p>
+                        <p class="text-slate-500 text-sm italic">Vel Tech Rangarajan Dr. Sagunthala R&D Institute, Chennai (2022-2026)</p>
+                        <p class="text-slate-400 text-sm mt-2"><span class="text-accent">Coursework:</span> Network Security, Cryptography, Digital Forensics, IoT Security, Secure System Design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION (MISSION LOG) -->
+    <section id="experience" class="py-20 bg-dark">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="flex items-center text-2xl font-bold text-white mb-12 font-mono">
+                <span class="text-primary mr-2">02.</span> Mission Log (Internships)
+                <span class="ml-4 h-px bg-white/20 flex-grow max-w-xs"></span>
+            </h2>
+
+            <div class="relative border-l border-slate-700 ml-3 md:ml-6 space-y-12">
+                
+                <!-- Experience Item 1 -->
+                <div class="relative pl-8 md:pl-12">
+                    <span class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-accent shadow-green-glow"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-white">AI Agent for Smart Farming Advice</h3>
+                        <span class="font-mono text-xs text-primary bg-primary/10 px-2 py-1 rounded mt-2 sm:mt-0">Jul 2025 - Aug 2025</span>
+                    </div>
+                    <div class="text-slate-400 font-medium mb-4">IBM (AICTE Internship Program)</div>
+                    <ul class="list-disc list-outside ml-4 text-slate-400 space-y-2 text-sm">
+                        <li>Designed an AI agent using <span class="text-primary">RAG on IBM Cloud Lite</span> to support farmers with real-time guidance.</li>
+                        <li>Integrated data sources (weather, soil, crop/pest advisories) and enabled local-language queries.</li>
+                        <li>Implemented retrieval pipelines, prompt templates, and basic safety guardrails using IBM Granite models.</li>
+                    </ul>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="relative pl-8 md:pl-12">
+                    <span class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-white">Python Development Intern</h3>
+                        <span class="font-mono text-xs text-slate-500 border border-slate-700 px-2 py-1 rounded mt-2 sm:mt-0">Jan 2023 - Feb 2023</span>
+                    </div>
+                    <div class="text-slate-400 font-medium mb-4">Skill Vertex (Remote)</div>
+                    <ul class="list-disc list-outside ml-4 text-slate-400 space-y-2 text-sm">
+                        <li>Automated attendance tracking, reducing manual logging time by <span class="text-accent">60%</span>.</li>
+                        <li>Developed Python automation scripts that improved workflow efficiency by 25%.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-20 bg-surface border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="flex items-center text-2xl font-bold text-white mb-12 font-mono">
+                <span class="text-primary mr-2">03.</span> Featured Operations
+                <span class="ml-4 h-px bg-white/20 flex-grow max-w-xs"></span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="glass-panel rounded border border-white/10 p-6 hover:-translate-y-1 transition duration-300 group">
+                    <div class="flex justify-between items-center mb-4">
+                        <i class="fa-solid fa-shield-virus text-3xl text-primary"></i>
+                        <div class="flex gap-4 text-slate-400">
+                            <a href="#" class="hover:text-accent"><i class="fa-brands fa-github text-xl"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition">Malware Detection (Deep Learning)</h3>
+                    <p class="text-slate-400 text-sm mb-4">
+                        Developed a CNN/LSTM-based model for malware detection using static and dynamic features. Achieved preliminary accuracy of 94% in classifying malicious signatures.
+                    </p>
+                    <div class="font-mono text-xs text-slate-500 flex flex-wrap gap-3">
+                        <span class="text-primary">Python</span>
+                        <span class="text-primary">TensorFlow</span>
+                        <span class="text-primary">CNN/LSTM</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-panel rounded border border-white/10 p-6 hover:-translate-y-1 transition duration-300 group">
+                    <div class="flex justify-between items-center mb-4">
+                        <i class="fa-solid fa-key text-3xl text-primary"></i>
+                        <div class="flex gap-4 text-slate-400">
+                            <a href="#" class="hover:text-accent"><i class="fa-brands fa-github text-xl"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition">Quantum-Resistant Encryption</h3>
+                    <p class="text-slate-400 text-sm mb-4">
+                        Implemented NIST-recommended post-quantum cryptographic algorithms, achieving an initial encryption throughput of 150 Mbps in prototypes to secure network communications.
+                    </p>
+                    <div class="font-mono text-xs text-slate-500 flex flex-wrap gap-3">
+                        <span class="text-primary">Cryptography</span>
+                        <span class="text-primary">NIST</span>
+                        <span class="text-primary">C++</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass-panel rounded border border-white/10 p-6 hover:-translate-y-1 transition duration-300 group">
+                    <div class="flex justify-between items-center mb-4">
+                        <i class="fa-solid fa-robot text-3xl text-primary"></i>
+                        <div class="flex gap-4 text-slate-400">
+                            <a href="#" class="hover:text-accent"><i class="fa-brands fa-github text-xl"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition">AI Agent for Smart Farming</h3>
+                    <p class="text-slate-400 text-sm mb-4">
+                        Built a RAG-based assistant delivering localized guidance to farmers. Retrieving data on weather, soil, and prices, deployed on IBM Cloud Lite using Granite models.
+                    </p>
+                    <div class="font-mono text-xs text-slate-500 flex flex-wrap gap-3">
+                        <span class="text-primary">IBM Cloud</span>
+                        <span class="text-primary">RAG</span>
+                        <span class="text-primary">LLMs</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="glass-panel rounded border border-white/10 p-6 hover:-translate-y-1 transition duration-300 group">
+                    <div class="flex justify-between items-center mb-4">
+                        <i class="fa-solid fa-network-wired text-3xl text-primary"></i>
+                        <div class="flex gap-4 text-slate-400">
+                            <a href="#" class="hover:text-accent"><i class="fa-brands fa-github text-xl"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition">Congestion-Aware WiNoC</h3>
+                    <p class="text-slate-400 text-sm mb-4">
+                        Designed and simulated a Wireless Network-on-Chip with real-time congestion monitoring, reducing packet latency. Presented at ICCI 2025.
+                    </p>
+                    <div class="font-mono text-xs text-slate-500 flex flex-wrap gap-3">
+                        <span class="text-primary">Embedded</span>
+                        <span class="text-primary">Simulation</span>
+                        <span class="text-primary">Networking</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-20 bg-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="flex items-center text-2xl font-bold text-white mb-12 font-mono">
+                <span class="text-primary mr-2">04.</span> Technical Arsenal
+                <span class="ml-4 h-px bg-white/20 flex-grow max-w-xs"></span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Category 1 -->
+                <div class="bg-surface p-6 rounded border border-white/5">
+                    <h3 class="text-accent font-mono mb-4 border-b border-white/10 pb-2">Languages</h3>
+                    <ul class="text-slate-400 text-sm space-y-2 font-mono">
+                        <li><i class="fa-brands fa-python mr-2"></i>Python</li>
+                        <li><i class="fa-solid fa-c mr-2"></i>C / C++</li>
+                        <li><i class="fa-brands fa-java mr-2"></i>Java</li>
+                        <li><i class="fa-solid fa-microchip mr-2"></i>Embedded C</li>
+                    </ul>
+                </div>
+                <!-- Category 2 -->
+                <div class="bg-surface p-6 rounded border border-white/5">
+                    <h3 class="text-accent font-mono mb-4 border-b border-white/10 pb-2">Cybersecurity</h3>
+                    <ul class="text-slate-400 text-sm space-y-2 font-mono">
+                        <li>Network Security</li>
+                        <li>IoT Security</li>
+                        <li>Penetration Testing</li>
+                        <li>Cryptography</li>
+                        <li>SOC Operations</li>
+                    </ul>
+                </div>
+                <!-- Category 3 -->
+                <div class="bg-surface p-6 rounded border border-white/5">
+                    <h3 class="text-accent font-mono mb-4 border-b border-white/10 pb-2">Tools</h3>
+                    <ul class="text-slate-400 text-sm space-y-2 font-mono">
+                        <li>Wireshark</li>
+                        <li>Nmap / Burp Suite</li>
+                        <li>Metasploit</li>
+                        <li>Kali Linux</li>
+                        <li>Git / VS Code</li>
+                    </ul>
+                </div>
+                <!-- Category 4 -->
+                <div class="bg-surface p-6 rounded border border-white/5">
+                    <h3 class="text-accent font-mono mb-4 border-b border-white/10 pb-2">Embedded/Cloud</h3>
+                    <ul class="text-slate-400 text-sm space-y-2 font-mono">
+                        <li>Embedded Linux</li>
+                        <li>RTOS (FreeRTOS)</li>
+                        <li>IBM Cloud</li>
+                        <li>Oracle Cloud (OCI)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications" class="py-20 bg-surface border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="flex items-center text-2xl font-bold text-white mb-12 font-mono">
+                <span class="text-primary mr-2">05.</span> Credentials
+                <span class="ml-4 h-px bg-white/20 flex-grow max-w-xs"></span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="flex items-start p-4 bg-dark rounded border border-white/10 hover:border-primary/50 transition">
+                    <i class="fa-solid fa-certificate text-yellow-500 mt-1 mr-4"></i>
+                    <div>
+                        <h4 class="text-white font-bold">Oracle Cloud Infrastructure 2025 Architect Associate</h4>
+                        <p class="text-slate-500 text-xs font-mono mt-1">July 2025</p>
+                    </div>
+                </div>
+                <div class="flex items-start p-4 bg-dark rounded border border-white/10 hover:border-primary/50 transition">
+                    <i class="fa-solid fa-certificate text-yellow-500 mt-1 mr-4"></i>
+                    <div>
+                        <h4 class="text-white font-bold">Oracle Certified Associate: Application Developer</h4>
+                        <p class="text-slate-500 text-xs font-mono mt-1">July 2025</p>
+                    </div>
+                </div>
+                <div class="flex items-start p-4 bg-dark rounded border border-white/10 hover:border-primary/50 transition">
+                    <i class="fa-solid fa-certificate text-blue-500 mt-1 mr-4"></i>
+                    <div>
+                        <h4 class="text-white font-bold">IBM SkillsBuild: RAG with LangChain & AI</h4>
+                        <p class="text-slate-500 text-xs font-mono mt-1">2025</p>
+                    </div>
+                </div>
+                <div class="flex items-start p-4 bg-dark rounded border border-white/10 hover:border-primary/50 transition">
+                    <i class="fa-solid fa-certificate text-red-500 mt-1 mr-4"></i>
+                    <div>
+                        <h4 class="text-white font-bold">EC-Council: Cybersecurity for SMB</h4>
+                        <p class="text-slate-500 text-xs font-mono mt-1">Dec 2024</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Other certs link -->
+            <div class="text-center mt-8">
+                <p class="text-slate-500 text-sm">Also certified by Deloitte, TATA, and Infosys Springboard.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 bg-dark text-center relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+        <div class="max-w-2xl mx-auto px-4 relative z-10">
+            <p class="text-accent font-mono mb-4 text-sm">06. Status Check</p>
+            <h2 class="text-4xl font-bold text-white mb-6">Initialize Communication</h2>
+            <p class="text-slate-400 mb-10 text-lg">
+                I am based in India and currently open to opportunities in Cyber Security and Embedded Engineering.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-6 mb-10">
+                <a href="mailto:venkataramanaanjuri@gmail.com" class="flex items-center justify-center gap-2 px-8 py-4 border border-primary text-primary font-mono rounded hover:bg-primary/10 transition duration-300">
+                    <i class="fa-regular fa-envelope"></i> venkataramanaanjuri@gmail.com
+                </a>
+                <a href="tel:+918106054754" class="flex items-center justify-center gap-2 px-8 py-4 border border-slate-600 text-slate-300 font-mono rounded hover:bg-white/5 transition duration-300">
+                    <i class="fa-solid fa-phone"></i> +91 8106054754
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-surface py-6 border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-4 text-center font-mono text-xs text-slate-500">
+            <p>Designed & Built by Venkata Ramana Anjuri // 2025</p>
+        </div>
+    </footer>
+
+</body>
+</html>
